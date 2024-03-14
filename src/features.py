@@ -11,9 +11,7 @@ pd.options.display.max_colwidth = 100
 pd.options.display.precision = 10
 pd.options.display.width = 160
 pd.set_option("display.float_format", "{:.4f}".format)
-import numpy as np
 import re
-import typing as t
 from collections import Counter
 from sklearn.preprocessing import OrdinalEncoder
 import json
@@ -42,7 +40,7 @@ if __name__ == "__main__":
 
     target = "etiquette_ges"
     target = "etiquette_dpe"
-    id = "n_dpe"
+    my_id = "n_dpe"
 
     columns_categorical = [
         "version_dpe",
