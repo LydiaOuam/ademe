@@ -23,7 +23,7 @@ __pycache__/
 *.pkl
 log/*.log
 
-# data
+data/
 # *.csv
 # *.pdf
 
