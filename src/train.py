@@ -4,6 +4,16 @@ from sklearn.metrics import classification_report
 import pandas as pd
 import numpy as np
 
+import mlflow
+
+remote_server_uri = "http://localhost:8080"
+mlflow.set_tracking_uri(remote_server_uri)
+
+# set experiment
+mlflow.set_experiment("experiment_01")
+
+mlflow.sklearn.autolog()
+
 # load data
 input_file = "./data/source/dpe_tertiaire.csv"
 data = pd.read_csv(input_file)
@@ -30,7 +40,7 @@ rf = RandomForestClassifier()
 # Define the parameter grid
 param_grid = {
     "n_estimators": [200, 300],  # Number of trees
-    "max_depth": [10],  # Maximum depth of the trees
+    "max_depth": [2,10,20],  # Maximum depth of the trees
     "min_samples_leaf": [1, 5],  # Maximum depth of the trees
 }
 
